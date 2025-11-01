@@ -898,35 +898,62 @@ class SAJungle {
 }
 const jungleData = new SAJungle("Dangerous cats", "Toxic plants")
 for(const val of jungleData) {
-    console.log(val)
+    //console.log(val)
 }
 
 
 
+class StringHost {
+    constructor(thatchel, container) {
+        this.thatchel = thatchel
+        this.container = container
+    }
+    *[Symbol.iterator]() {
+        yield "Stage 1: Guest"
+        let result = ""
+        let counter = 0
+        let rebuilt = "We can rebuild anything" + " " + "We have the technology."
+        let slogan = "Customer is always right!" + " " + "Well...not all the time"
+        let build = `${result} is now the new ${rebuilt}. Always recite our ${slogan}!`
+        for ( let match of rebuilt.matchAll(/a/g)) {
+           //console.log(match)
+           //break
+            if (rebuilt.length > slogan.length) {
+                slogan.replace("C", "I")
+                slogan.replaceAll("e", "R")
+                counter++
+                result += slogan + counter
+            } else if (rebuilt.length === slogan.length) {
+                rebuilt.indexOf("r")
+                rebuilt.match(/a/g)
+                counter++
+            } else {
+                slogan = slogan.replace("C", "I").replaceAll("e", "R")
+                counter++
+                result += `${slogan}` +", " + `count reached: ${counter}` + ". " 
+            }
+        }
+        yield result
+    }
+}
+const host = new StringHost("some String", "Not a String")
+for (const val of host) {
+    //console.log(val)
+}
 
-/*/	
-Object.seal(obj)	Prevents adding/removing properties (but allows edits)	
-Object.defineProperty(obj, key, descriptor)	Adds a property with fine-grained control (like read-only, hidden, getter/setter)	
-Object.defineProperties(obj, descriptors)	Adds multiple properties at once	
-/*
-//
 
-global functions--Stand alone checkers---Strict mode: Number.isFinite()
-isNaN
-parseFloat 
- parseInt 
-setTimeout
-clearTimeout
-setInterval
-clearInterval
+
+let scammer = "what's going on here?"
+for (const point of scammer) {
+scammer += "?" + " " + "scam!"
+}
+console.log(`${scammer}`+ scammer.codePointAt(0))
+return scammer
+
+/*/
 string methods--
-codePointAt
 lastIndexOf
-match
- matchAll
 repeat
-replace
-replaceAll
 substring
 trim
 trimEnd
@@ -946,7 +973,14 @@ sort
 splice
 values
 
-
+global functions--Stand alone checkers---Strict mode: Number.isFinite()
+isNaN
+parseFloat 
+ parseInt 
+setTimeout
+clearTimeout
+setInterval
+clearInterval
 
 
 
