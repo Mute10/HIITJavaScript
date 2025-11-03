@@ -1,3 +1,1 @@
-delete money[1]
-        money.splice(1, 1, clothingStore)
-    }
+console.log(nested.findIndex(inner => inner[0] === "spoon" && inner[1] === "plate"))

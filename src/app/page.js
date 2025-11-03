@@ -947,23 +947,61 @@ let scammer = "what's going on here?"
 for (const point of scammer) {
 scammer += "?" + " " + "scam!"
 }
-console.log(`${scammer}`+ scammer.codePointAt(0))
-return scammer
+//console.log(`${scammer}`+ scammer.codePointAt(0))
+
+
+
+class randomObjects {
+    *[Symbol.iterator]() {
+        yield "NaO"
+        let result = []
+        let nested = [
+  ["knife", "fork"],
+  ["chair", "table"],
+  ["spoon", "plate"],
+  ["bobber", "fishing pole"]
+];
+
+        let outerIndex = nested.findIndex(inner => inner.includes("fishing pole"));
+        let innerIndex = nested[outerIndex].indexOf("fishing pole");
+        let rebuilt = ["This is a cup.", "this isn't a cup"]
+        let woodObjects = ["chair", "bed frame", "floor boards", "table"]
+        let metalObjects = ["knife", "pipe", "fork", "engine", "wrench", "pipe"]
+        for (let i = 0; i < metalObjects.length; i++){
+            for (let j = 0; j < woodObjects.length; j++) {
+                if (metalObjects[i] > woodObjects[j]) {
+                    rebuilt = rebuilt.map(e => e.split("").fill("Cc", 1, 4).join(""))
+                    result.push([...rebuilt])
+                } else if (metalObjects.length < woodObjects.length) {
+                    rebuilt = woodObjects[j].substring(1, 3).trimStart()
+                    result.push([...rebuilt])
+                } else {
+                   let temp = rebuilt.join(",").trim()+ "secret string" + " ".repeat(4) + "?".replaceAll(" ", "*") 
+                    rebuilt = temp.split(",")
+                    result.push([...rebuilt])
+                }
+            }
+            yield "Too many strings"
+            //console.log(metalObjects.lastIndexOf("pipe") ) result = 5
+            //console.log(woodObjects.findIndex(c => c === "table")) //3
+            //console.log(nested.findIndex(i => i[0] === "bobber" &&  i[1] === "fishing pole"))
+            console.log(innerIndex, outerIndex) 
+            return result
+        }
+        
+    }
+}
+const rareObj = new randomObjects()
+for (const val of rareObj) {
+    console.log(val)
+}
 
 /*/
 string methods--
-lastIndexOf
-repeat
-substring
-trim
-trimEnd
-trimStart
-fill
+
+
 find
-findIndex
-flat
 forEach
-join
 keys
 reduce
 reverse
