@@ -1,3 +1,5 @@
+import os from "os"
+
 //function declarations
 function problem(solution) { //1
     let one = 17
@@ -29,9 +31,9 @@ glassDoor("product")
 
 
 function fieldSpace(km = []) { //4
-    verticalSpace = ["100 yards", "200 yards", "300 yards"]
-    horizontalSpace = ["50 kilometers", "100 kilometers", "150 kilometers"]
-    counter = 0
+    let verticalSpace = ["100 yards", "200 yards", "300 yards"]
+    let horizontalSpace = ["50 kilometers", "100 kilometers", "150 kilometers"]
+    let counter = 0
     for (let i = 0; i < km.length; i++) {
         if (verticalSpace > km[i]) {
             verticalSpace.pop()
@@ -46,12 +48,13 @@ function fieldSpace(km = []) { //4
 fieldSpace(["100", "200", "300"])
 
 
+
 function direction(left = [], right = []) { //5
  let down = [-12, -1, -3]
  let up = [11, 11, 12]
- counter = 0
- for (i = 0; i <= left.length; i++)
-    for (j = 0; j <= right.length; j++){
+ let counter = 0
+ for (let i = 0; i <= left.length; i++)
+    for (let j = 0; j <= right.length; j++){
         if (up[i] >= left[i] && down[j] >= right[j]) {
             counter++;
             up.pop()
@@ -106,7 +109,7 @@ function mentalEnergy(brain = true) {
     let learned = ["understanding", "creator of own world"]
     let mentalProgramming = "make dreams real"
  do {
-    brainChange = brain.toString(brain)
+    let brainChange = brain.toString(brain)
     mentalProgramming += "thoughts work day and night"
  } while (learned.length > thoughts.length)
     //console.log(`My "${mentalProgramming}" ideology get's better everyday. And ${brainChange} is a boolean`)
@@ -189,7 +192,7 @@ buildHighSum()
 buildLowSum([-20, -2, -33, -404, "bad error"]); //5
 function buildLowSum(arr) {
     let Result = [];
-    for (i = 0; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++){
         if (typeof arr[i] === "number" && arr[i] < -2) {
             Result.push(arr[i])
             //console.log(Result)
@@ -365,7 +368,7 @@ for (const val of frequency()){
 
 
 
-function* build_a_house(supplies) { //5
+function* build_a_house(supplies) { 
     yield "Monday"
     let money = ["Bricks to build houses and libraries", "tools", "counting coins"]
     let clothingStore = "High Quality fabric"
@@ -390,7 +393,7 @@ for (const val of build_a_house(["hammer", "brick", "stone", "leaf", "Tree"])) {
 
 
 
-const smallChoices = function*() { //6
+const smallChoices = function*() { 
     yield "GO"
     yield "STOP"
 let dreams = {date: "10/9/25", goal: "build something.", cancel: "Let's cancel the project."};
@@ -407,7 +410,7 @@ for (const val of smallChoices()) {
 }
 
 
-const bigChoices = () => ({ //7
+const bigChoices = () => ({ 
 *[Symbol.iterator]() {
 yield "firewall";
 yield {secretCode: 7293, name: "Cube", type: "OD10"}
@@ -440,7 +443,7 @@ const superComputer = () => ({
     }
 })
 let testResults = {}
-let counterr  = 0
+let counter  = 0
 const l = ["e", "c"]
 let testObj = {name: "4X-290", type: "weapon", progress: "80%", malfunctions: 2}
 const superData = [...superComputer()]
@@ -451,15 +454,15 @@ for (const val of superData) {
         );
         Object.assign(testResults, testObj)
         if (matches.length > 0) {
-            testResults[`object_${counterr}`] = matches
+            testResults[`object_${counter}`] = matches
             counter++
         } 
     } else if (
     typeof val === "string" &&
     l.some(xyz => val.toLowerCase().includes(xyz))
   ) {
-    testResults[`match_${counterr}`] = val;
-    counterr++;
+    testResults[`match_${counter}`] = val;
+    counter++;
   }
 }
 //console.log(testResults)
@@ -591,7 +594,7 @@ class Planets {
         let stats = [Math.random()*70 + 10, Math.random() * 80 + 15, Math.random()*70 + 15,
             Math.random()*100 + 10, Math.random()*170 + 20
         ]
-        for (i = 0; i < stats.length; i ++) {
+        for (let i = 0; i < stats.length; i ++) {
             if (nums.length > stats.length) {
                 counter++;
                 result.push(stats.filter(e => e > 25).map(e => Math.floor(e)))
@@ -699,6 +702,7 @@ const bigSeven = new SeventyOne(Math.ceil(Math.random() *35 + 1))
 for (const value of bigSeven) {
     //`console.log(value)
 }
+
 
 
 class B2L10 {
@@ -985,7 +989,7 @@ class randomObjects {
             //console.log(metalObjects.lastIndexOf("pipe") ) result = 5
             //console.log(woodObjects.findIndex(c => c === "table")) //3
             //console.log(nested.findIndex(i => i[0] === "bobber" &&  i[1] === "fishing pole"))
-            console.log(innerIndex, outerIndex) 
+            //console.log(innerIndex, outerIndex) 
             return result
         }
         
@@ -993,23 +997,97 @@ class randomObjects {
 }
 const rareObj = new randomObjects()
 for (const val of rareObj) {
-    console.log(val)
+    //console.log(val)
 }
 
+
+
+class Liquor{
+    *[Symbol.iterator]() {
+        yield "GO"
+        let result = []
+        let badVar = [0,0,0]
+        let USA = ["budweiser", "bud light", "heineken", "guiness", "Sierra Nevada", "Labatt Blue",
+            "Molson Canadian", "Coors Light", "Natural Light", "Colt 45", "Mickey's", "Mike's Hard Lemonade"
+        ]
+        let Asia = ["dark horse", "kirin", "tiger", "san mig", "san mig light", "extra strong dark horse",
+            "sapporo", "strong zero", "high ball", "sake", "Vietnam"
+        ]
+        const findArr = USA.find(i => i.startsWith("g"))
+        const foundL = USA.map(e => e.replace("g", "44"))
+        //console.log(foundL)
+        const feAsia = Asia.forEach((element, i) => {
+        if (element.toLowerCase().startsWith("S")) {
+            result.push(element[i])
+        } else {
+            result.push(badVar)
+        }
+        })
+        yield "STOP"
+    }
+}
+const beer = new Liquor()
+for (const val of beer) {
+    //console.log(val)
+}
+
+
+
+class skyBuild {
+    constructor(land) {
+        this.land = land
+    }
+    *[Symbol.iterator]() {
+        yield "Destination reached"
+        let schem = {type: "mineral", liquid: "No", solid: "Yes"}
+        let result = []
+        let newResults = []
+        let other = {type: "mercury", liquid: "yes", solid: "No"}
+        let smallDetails = {tested: "Null", marketed: "Null", }
+        const schemKeys = Object.keys(schem)
+        const otherKeys = Object.keys(other)
+
+        yield "Keys"
+
+        const password = "12-33-09-16"
+        const mustInclude = "email me at" + ":" 
+        const screenName = "isc.react@gmail.com"
+        let dataResult = []
+        for (let obj of schemKeys){
+            if (schemKeys.length >= otherKeys.length) {
+                const rebuilt = Object.entries(smallDetails)
+                let transformed_Data = Object.fromEntries(Object.entries(schem).map(([key, value]) => [key,
+                     value.replace(/[mrY]/g, "001")]))
+                //Object.values(schem).map(e => e.split("").replace("mineral", "LLL")).join("")
+                console.log(transformed_Data)
+                Object.assign(result, transformed_Data)
+                Object.assign(newResults, rebuilt)
+            } else if (schemKeys.length < otherKeys.length) {
+                let maxResults = Object.values(other).map(i => i.split("").reverse().join(""))
+                Object.assign(result, maxResults)
+            } else {
+                yield "NULL"
+            }
+        }
+       
+        }
+
+    }
+    const skyProject = new skyBuild("reach")
+    for (const val of skyProject) {
+        console.log(val)
+    }
+
+
+
 /*/
-string methods--
-
-
-find
-forEach
+build arrays before starting the project
 keys
 reduce
-reverse
-slice
-some
+some/filter
 sort
 splice
-values
+
 
 global functions--Stand alone checkers---Strict mode: Number.isFinite()
 isNaN
