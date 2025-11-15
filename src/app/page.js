@@ -1059,7 +1059,7 @@ class skyBuild {
                 let transformed_Data = Object.fromEntries(Object.entries(schem).map(([key, value]) => [key,
                      value.replace(/[mrY]/g, "001")]))
                 //Object.values(schem).map(e => e.split("").replace("mineral", "LLL")).join("")
-                console.log(transformed_Data)
+                //console.log(transformed_Data)
                 Object.assign(result, transformed_Data)
                 Object.assign(newResults, rebuilt)
             } else if (schemKeys.length < otherKeys.length) {
@@ -1075,62 +1075,128 @@ class skyBuild {
     }
     const skyProject = new skyBuild("reach")
     for (const val of skyProject) {
-        console.log(val)
+        //console.log(val)
     }
 
 
 
+
+const synchroSummon = async () => {
+  try {
+    const response = await fetch("https://www.wikipedia.org");
+    const data = await response.text();
+    //console.log("Data received:", data);
+    //returns all wiki main page text
+    return "Fetched Worked";
+  } catch (error) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve("Fried Rice!"), 1000);
+      setTimeout(() => reject("Cold rice!"), 2000);
+    });
+  }};
+
+async function run() {
+  //synchroSummon().then(msg => console.log("Resolved", msg)).catch(
+    //error => console.log("Rejected", error))
+    let counter = 0
+    const intervalId = setInterval(() => {
+        //console.log(counter)
+        counter++
+        if (counter === 1) {
+            clearInterval(intervalId)
+            //console.log("Interval terminated")
+        }
+    }, 1000) 
+}
+run();
+
+    
+
+const hereToForever = async () => {
+  //console.group("Async function started!")
+  const msg = await new Promise((resolve, reject) => {
+    setTimeout(() => ("Hello from async"), 2000)
+  })
+  //console.clear(msg)
+}
+hereToForever()
+
+
+const globeWifi = async () => {
+    try {
+        const msg = await new Promise((resolve, reject) => {
+            const abort = false;
+            setTimeout(() => {
+                if (abort) resolve("It's resolved")
+                    else reject(`Rejected.`)
+                 }, 2000);
+        })
+        //console.count("resolved", msg)
+    } catch(error) {
+        //console.error("Rejected...", error)
+    }
+}
+globeWifi()
+
+
+
+//use reduce and splice, use strict Number.methods
+
+class BioInc {
+    *[Symbol.iterator](){
+        yield "Build"
+        let result = []
+        let rebuilt = []
+        let conjunction = [[1.1, 20, 22, 707, 3, 29, 1.0, 0.219, 61, 77, 500, 205, 500, 313, 22, 17, 69],
+                            [99, 28, 27, 60, 30, 22, 2.0, 3.117, 22.22, 18, 101, 103, 777, 219, 10, 15]]
+        let scramble = ["staff?", "accumulated!", "Monolithic?", "Mono?", "plateau...", "career:", 
+            "does this work?", "dance", "concert"]
+            let scarletPuzzle = "What's the secret code?"
+            let scarletPuzzle2 = 313909
+            for (let i = 0; i <= conjunction.length; i++) { //REDUNDANT
+                if (Array.isArray(conjunction)) {
+                conjunction.some(i => i.some(num => String(num).includes("9")))
+                conjunction = conjunction.map(e => e.map(num => String(num).includes("9")?
+                    0 : num));
+                result.push(conjunction)
+                console.log(result)
+                break //REDUNDANT
+            } else {
+                yield "Build Failed"
+                console.log("No result")
+                
+            } 
+            for (let j = 0; j <= scramble.length; j++) {
+                if (scramble.length >= 5) {
+                    Object.keys((scramble).map(e => typeof e === "string" ? e.replace(/c/g, "GUX") : e))
+                    scramble.filter(fl => !fl.includes("d"))
+                    rebuilt.push(scramble)
+                    //console.log(rebuilt)
+                } else {
+                    yield "Build Failed"
+                }
+            }
+            }
+            yield "End of Process"
+    }
+}
+const bioLLC = new BioInc() 
+for (const val of bioLLC) {
+console.log(val)
+}
+
+//try .filter(n => n > 20)
+
 /*/
-build arrays before starting the project
-keys
-reduce
-some/filter
-sort
-splice
-
-
-global functions--Stand alone checkers---Strict mode: Number.isFinite()
-isNaN
-parseFloat 
- parseInt 
-setTimeout
-clearTimeout
-setInterval
-clearInterval
-
-
-
-Number Methods---
-Number.isFinite
-Number.isInteger
-Number.isNaN
-Number.parseFloat
-Number.parseInt
-Number.prototype.toFixed
-Number.prototype.toString
-
-
-
-Map Methods--
-map.prototype.add
-Map.prototype.delete
-Map.prototype.forEach
-
-
-Set Methods--
-Set.prototype.add
-Set.prototype.delete
-Set.prototype.forEach
-
 
 Promise Methods-- async and await functions
-Promise.all
-Promise.any
-Promise.race
-Promise.reject
-Promise.resolve
-Promise.prototype.catch
-Promise.prototype.then
+Promise.all([promise1, promise2])
+Promise.race([promise1, promise2])
+Promise.any([promise1, promise2])
+Promise.allSettled([])
+reject
+resolve
+then/await/try catch
 
 
 Date Methods--
