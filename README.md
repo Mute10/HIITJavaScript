@@ -1,3 +1,7 @@
+THIS IS JUST A COMPILATION OF ALL JAVASCRIPT I'VE BUILT OVER THE COURSE OF 12+ MONTHS.
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
