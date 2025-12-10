@@ -957,7 +957,7 @@ scammer += "?" + " " + "scam!"
 
 class randomObjects {
     *[Symbol.iterator]() {
-        yield "NaO"
+        yield "NaN"
         let result = []
         let nested = [
   ["knife", "fork"],
@@ -1016,7 +1016,7 @@ class Liquor{
         const findArr = USA.find(i => i.startsWith("g"))
         const foundL = USA.map(e => e.replace("g", "44"))
         //console.log(foundL)
-        const feAsia = Asia.forEach((element, i) => {
+        const AsiaBeer = Asia.forEach((element, i) => {
         if (element.toLowerCase().startsWith("S")) {
             result.push(element[i])
         } else {
@@ -1081,7 +1081,7 @@ class skyBuild {
 
 
 
-const synchroSummon = async () => {
+const sync = async () => {
   try {
     const response = await fetch("https://www.wikipedia.org");
     const data = await response.text();
@@ -1096,7 +1096,7 @@ const synchroSummon = async () => {
   }};
 
 async function run() {
-  //synchroSummon().then(msg => console.log("Resolved", msg)).catch(
+  //sync().then(msg => console.log("Resolved", msg)).catch(
     //error => console.log("Rejected", error))
     let counter = 0
     const intervalId = setInterval(() => {
@@ -1159,11 +1159,11 @@ class BioInc {
                 conjunction = conjunction.map(e => e.map(num => String(num).includes("9")?
                     0 : num));
                 result.push(conjunction)
-                console.log(result)
+                //console.log(result)
                 break //REDUNDANT
             } else {
                 yield "Build Failed"
-                console.log("No result")
+                //console.log("No result")
                 
             } 
             for (let j = 0; j <= scramble.length; j++) {
@@ -1182,38 +1182,42 @@ class BioInc {
 }
 const bioLLC = new BioInc() 
 for (const val of bioLLC) {
-console.log(val)
+//console.log(val)
 }
 
-//try .filter(n => n > 20)
 
-/*/
+class boatCo{
+    constructor(time, cost){
+        this.time = time
+        this.cost = cost
+    }
+    *[Symbol.iterator]() {
+        yield "4PM"
+        let result = []
+        let bohol = []
+        let oceanJet = ["water", "air con", "snacks", "business class", 1000]
+        let tigerJet = ["water", "snacks", 800, "business class"]
+            if (oceanJet.length > 4) {
+                yield "online"
+                    let subJet = oceanJet.map(element => typeof element === "string" ? element.split("").filter(char => 
+                        char !=="e").join("").replace(/a/g, "2.000"): element)
+                    
 
-Promise Methods-- async and await functions
-Promise.all([promise1, promise2])
-Promise.race([promise1, promise2])
-Promise.any([promise1, promise2])
-Promise.allSettled([])
-reject
-resolve
-then/await/try catch
+                result.push(subJet)
+                console.log(result)
 
-
-Date Methods--
-getDate
-getDay
-getFullYear
-getHours
-getMinutes
-getMonth
-getSeconds
-getTime
-setDate
-setFullYear
-setHours
-setMinutes
-setMonth
-setSeconds
-setTime
-
-*/
+            } else if(tigerJet.length > 4) {
+                yield "ocean Jet is better"
+                let speed = tigerJet.map(element => element.charAt(1).replace(1, "seafront"))
+                bohol.push(speed)
+            } else {
+                yield "I'm out of pesos"
+            }
+            yield "end of program"
+    }
+   
+    }
+const newBoat = new boatCo("2 hours", "2000 pesos")
+for( const val of newBoat) {
+    console.log(val)
+}
